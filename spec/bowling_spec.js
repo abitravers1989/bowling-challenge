@@ -1,4 +1,4 @@
-describe("Bowling", function(){
+describe("Bowling start of the game functionalities", function(){
 
   var bowling
 
@@ -25,40 +25,5 @@ describe("Bowling", function(){
   it("Number of pins starts at 10", function(){
     expect(bowling.pinsnr).toEqual(10);
   });
-
-});
-
-describe("Throwing a bowling ball", function(){
-
-  var bowling
-
-  beforeEach(function(){
-       bowling = new Bowling();
-      //  var randomnumber = jasmine.createSpyObj("randomnumber", 8)
-      //  randomnumber = jasmine.createSpyObj('randomnumber', return 8)
-    });
-
-     it("The first roll changes the number of pins and the total score", function(){
-       this.randomnumber = 8
-       bowling.roll1();
-       expect(bowling.pinsnr).toEqual(2)
-       expect(bowling.currentscore).toEqual(8)
-  });
-
-describe("Frame/ game 1", function(){
-
-  var bowling
-
-  beforeEach(function(){
-    bowling = new Bowling();
-  });
-
-    it("goes to roll 2 if roll 1 does not equal a strike",function(){
-      bowling.strike = false
-      roll1() = 7
-      bowling.gameframe
-      expect(bowling.roll2).toHaveBeenCalled();
-    });
-});
 
 });

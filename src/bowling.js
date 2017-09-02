@@ -14,10 +14,10 @@ var randomnumber = function() {
   //  BOWLNUM._sample
 };
 
-    Bowling.prototype.gameframe = function(){
-      roll1();
-      if (roll1(); < 10 && strike === false)
-    };
+    // Bowling.prototype.gameframe = function(){
+    //   roll1();
+    //   if (roll1(); < 10 && strike === false)
+    // };
 
   Bowling.prototype.roll1 = function(){
     this.pinsnr -= randomnumber()
