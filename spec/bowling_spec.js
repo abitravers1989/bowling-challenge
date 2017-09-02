@@ -18,4 +18,16 @@ describe("Bowling", function(){
     expect(bowling.score).toEqual([]);
   });
 
+  it("Number of pins starts at 10", function(){
+    expect(bowling.pinsnr).toEqual(10);
+  });
+
+   describe("Throwing a bowling ball", function(){
+
+     it("A random number is generated for roll 1", function(){
+
+     });
+
+   });
+
 });
