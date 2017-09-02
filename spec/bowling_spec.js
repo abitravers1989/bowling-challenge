@@ -14,22 +14,32 @@ describe("Bowling", function(){
     expect(bowling.rollnr).toEqual(1);
   });
 
-  it("the score starts as an empty array", function(){
-    expect(bowling.score).toEqual([]);
+  it("the current score starts at 0", function(){
+    expect(bowling.currentscore).toEqual(0);
+  });
+
+  it("the total score starts as an empty array", function(){
+    expect(bowling.totalscore).toEqual([]);
   });
 
   it("Number of pins starts at 10", function(){
     expect(bowling.pinsnr).toEqual(10);
   });
 
+});
+
    describe("Throwing a bowling ball", function(){
 
-     it("The first roll changes the number of pins", function(){
-       bowling.roll1();
-       bowling.randnumber = 4
-       expect(bowling.pinsnr).toEqual(6)
+     var bowling
+
+     beforeEach(function(){
+       bowling = new Bowling();
+      //  randomnumber = jasmine.createSpyObj('randomnumber', return 8)
      });
 
-   });
-
-});
+     it("The first roll changes the number of pins and the total score", function(){
+       bowling.roll1();
+       expect(bowling.pinsnr).toEqual(2)
+       expect(bowling.currentscore).toEqual(8)
+     });
+    });
