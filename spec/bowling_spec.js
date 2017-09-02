@@ -24,8 +24,10 @@ describe("Bowling", function(){
 
    describe("Throwing a bowling ball", function(){
 
-     it("A random number is generated for roll 1", function(){
-
+     it("The first roll changes the number of pins", function(){
+       bowling.roll1();
+       bowling.randnumber = 4
+       expect(bowling.pinsnr).toEqual(6)
      });
 
    });
