@@ -14,4 +14,8 @@ describe("Bowling", function(){
     expect(bowling.rollnr).toEqual(1);
   });
 
+  it("the score starts as an empty array", function(){
+    expect(bowling.score).toEqual([]);
+  });
+
 });
