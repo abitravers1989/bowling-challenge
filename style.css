@@ -1,0 +1,85 @@
+.low-usage {
+  color: lightblue;
+}
+
+.medium-usage {
+  color: green;
+}
+
+.high-usage {
+  color: red;
+}
+
+
+
+body {
+	color:#999;
+	background-color:#fff;
+	font-family:'Open Sans',Arial,Helvetica,sans-serif;
+	-webkit-font-smoothing: antialiased;
+
+	font-size:14px; line-height:1.5;
+	margin:0; padding:0;
+}
+
+
+h1 {
+     text-align: center;
+     color: #0B234F;
+     font-size: 40px;
+    }
+   h2 {
+      text-align: center;
+      color: #0B222F;
+      font-size: 20px;
+     }
+
+     h3 {
+        text-align: center;
+        color: #0B222F;
+        font-size: 25px;
+       }
+  label {
+   width: 250px;
+   float: left;
+   margin: 0 30px 0 30px;
+ }
+ span {
+     display: block;
+   }
+
+
+  input[type=button] {
+	display: inline-block;
+	margin: .4em;
+	padding: 1em;
+	cursor: pointer;
+	background: #e1e1e1;
+	text-decoration: none;
+	color: #333;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	margin-top:6px;
+	line-height:1 !important;
+	border:0;
+}
+
+
+
+/*input[type=button id="powersaving-off"] {
+  display: inline-block;
+ margin: .4em;
+ padding: 1em;
+ cursor: pointer;
+ background: #e1e1e1;
+ text-decoration: none;
+ color: #8888;
+ -webkit-tap-highlight-color: rgba(0,0,0,0);
+ margin-top:6px;
+ line-height:1 !important;
+ border:0;
+}
+/*<form id="powersave">
+  <input type=button id="powersaving-off">Turn off</button>
+  <input type=button id="powersaving-on">Turn on</button>
+</p>
+</form>*/*/
