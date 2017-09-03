@@ -16,8 +16,8 @@ describe("Score", function(){
    });
 
    it("calculates the score of a frame when neither a spare or strike happen", function(){
-     result = score.calculatingframe(1,false,3,false)
-     expect(result).toEqual(4)
+     result = score.calculatingframe(1, false, 3, false)
+     expect(this.totalscore).toContain(4)
    });
 
   //  it("if the number of pins knocked down in roll 1 is 10 then strike is changed to true", function(){

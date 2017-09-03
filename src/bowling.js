@@ -14,13 +14,11 @@ var Bowling = function(){
 
  Bowling.prototype.roll1 = function(){
    rollnr = randomnumber1()
-   console.log(rollnr)
    this.currentscore += rollnr
    this.pinsnr -= rollnr
  };
 
  var randomnumber2 = function() {
-   maxnr = this.pinsnr
    return Math.floor(Math.random() * 9) + 1
  };
 
