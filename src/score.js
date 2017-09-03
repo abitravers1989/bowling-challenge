@@ -1,4 +1,5 @@
 
-// var Score = function(){
-//   this.totalscore = []
-// };
+var Score = function(){
+  this.totalscore = []
+  this.framenr = 1 
+};

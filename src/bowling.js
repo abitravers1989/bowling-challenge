@@ -1,11 +1,10 @@
 var Bowling = function(){
-  this.score = []
-  this.framenr = 1
-  this.rollnr = 1
+  // this.framenr = 1
   this.currentscore = 0
   this.pinsnr = 10
   this.strike = false
-  // this.bonus = 5
+  this.spare = false
+  this.score = new Score
 }
 
  var randomnumber1 = function() {
@@ -15,6 +14,7 @@ var Bowling = function(){
 
  Bowling.prototype.roll1 = function(){
    rollnr = randomnumber1()
+   console.log(rollnr)
    this.currentscore += rollnr
    this.pinsnr -= rollnr
  };
@@ -28,12 +28,14 @@ var Bowling = function(){
    rollnr2 = randomnumber2()
    console.log(rollnr2)
    if (rollnr2 > this.pinsnr) {
-     rollnr2 = this.pinsnr
+     rollnr3 = this.pinsnr
+     this.spare = true
+     this.score.push(10)
    } else {
-     rollnr2 = rollnr2
+     rollnr3 = rollnr2
    }
-   this.pinsnr -= rollnr2
-   this.currentscore += rollnr2
+   this.pinsnr -= rollnr3
+   this.currentscore += rollnr3
  };
 
   Bowling.prototype.gameframe = function(){
@@ -41,13 +43,13 @@ var Bowling = function(){
       bowl1 = Bowling.prototype.roll1();
       if (bowl1 === 10){
         this.strike = true
-        this.totalscore.push(10)
+        this.score.push(10)
       } else {
+        // this.score.push(bowl1)
         Bowling.prototype.roll2();
       }
     };
 
 bowl = new Bowling
-bowl.roll1();
+// this executes both roll 1 and roll2
 bowl.gameframe();
-bowl.roll2();

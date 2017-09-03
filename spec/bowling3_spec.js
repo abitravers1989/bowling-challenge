@@ -4,7 +4,7 @@ describe("Frame/ game 1", function(){
 
   beforeEach(function(){
     bowling = new Bowling();
-    // score = new Score();
+    score = new Score();
   });
 
 // NEED A SPY HERE
@@ -16,9 +16,7 @@ describe("Frame/ game 1", function(){
   });
 
   it("The current score cannot be higher than 10", function(){
-    bowling.roll1();
     bowling.gameframe();
-    bowling.roll2();
     expect(bowling.currentscore).toBeLessThan(11)
   });
 
