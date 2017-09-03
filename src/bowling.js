@@ -2,6 +2,7 @@ var Bowling = function(){
   // this.framenr = 1
   this.currentscore = 0
   this.pinsnr = 10
+// both currentscore and pinsnr needed??
   this.strike = false
   this.spare = false
   this.score = new Score
