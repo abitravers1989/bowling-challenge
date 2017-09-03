@@ -28,18 +28,16 @@ var Bowling = function(){
 
   Bowling.prototype.gameframe = function(){
     // while this.framenr >= 10
-      Bowling.prototype.roll1();
+      bowl1 = Bowling.prototype.roll1();
       console.log(Bowling.prototype.roll1())
       // returns 2 so the current score
-      if (Bowling.prototype.roll1() >= 1){
-        roll2();
+      if (bowl1 === 10){
+        this.strike = true
+        this.totalscore.push(10)
       console.log(this.strike)
       console.log(this.totalscore)
       } else {
-        this.strike = true
-        this.totalscore.push(10)
-        console.log(this.strike)
-        console.log(this.totalscore)
+        Bowling.prototype.roll2();
       }
     };
 
