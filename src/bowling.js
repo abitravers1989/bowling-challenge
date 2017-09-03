@@ -1,4 +1,3 @@
-
 var Bowling = function(){
   this.score = []
   this.framenr = 1
@@ -9,30 +8,35 @@ var Bowling = function(){
   // this.bonus = 5
 }
 
- var randomnumber = function() {
+ var randomnumber1 = function() {
+   return Math.floor(Math.random() * 10) + 1
+ };
+
+ var randomnumber2 = function() {
    return Math.floor(Math.random() * 10) + 1
  };
 
  Bowling.prototype.roll1 = function(){
-   this.pinsnr -= randomnumber()
-   this.currentscore += randomnumber()
+   rollnr = randomnumber1()
+   this.currentscore += rollnr
+   console.log(this.currentscore)
+   console.log(rollnr)
+   this.pinsnr -= rollnr
+   console.log(rollnr)
+   console.log(this.pinsnr)
  };
 
  Bowling.prototype.roll2 = function(){
-   this.pinsnr -= randomnumber()
-   this.currentscore += randomnumber()
+   this.pinsnr -= randomnumber1()
+   this.currentscore += randomnumber1()
  };
 
   Bowling.prototype.gameframe = function(){
     // while this.framenr >= 10
       bowl1 = Bowling.prototype.roll1();
-      console.log(Bowling.prototype.roll1())
-      // returns 2 so the current score
       if (bowl1 === 10){
         this.strike = true
         this.totalscore.push(10)
-      console.log(this.strike)
-      console.log(this.totalscore)
       } else {
         Bowling.prototype.roll2();
       }
