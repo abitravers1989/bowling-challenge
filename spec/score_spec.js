@@ -21,10 +21,15 @@ describe("Score", function(){
    });
 
    it("calculates the score when there is a strike", function(){
-     var bonus = 10
+     var strikebonus = 10
     //  assign an arbitary bonus of 10 for strike at the second roll number
-     score.calculatingframe(10, true, bonus, false)
+     score.calculatingframe(10, true, strikebonus, false)
      expect(score.totalscore).toContain(20)
+   });
+
+   it("records if there is a strike in a hash with the frame number ONLY WHEN FRAME 1 ATM", function(){
+     score.hasstrike(1, true)
+     expect(score.strike).toEqual({1: true})
    });
 
   //  it("if the number of pins knocked down in roll 1 is 10 then strike is changed to true", function(){
