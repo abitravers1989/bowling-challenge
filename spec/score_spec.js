@@ -21,10 +21,11 @@ describe("Score", function(){
    });
 
    it("calculates the score when there is a strike", function(){
-     var strikebonus = 10
-    //  assign an arbitary bonus of 10 for strike at the second roll number
-     score.calculatingframe(10, true, strikebonus, false)
-     expect(score.totalscore).toContain(20)
+     var framenr = 1
+     score.calculatingframe(10, true, 0, false);
+     score.hasstrike(framenr, true);
+     expect(score.totalscore).toContain(10)
+     expect(score.strike).toEqual({1: true})
    });
 
    it("records if there is a strike in a hash with the frame number ONLY WHEN FRAME 1 ATM", function(){
