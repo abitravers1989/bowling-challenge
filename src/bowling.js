@@ -1,12 +1,11 @@
-'use strict';
 
 var Bowling = function(){
+  this.score = []
   this.framenr = 1
   this.rollnr = 1
   this.currentscore = 0
   this.pinsnr = 10
   this.strike = false
-  this.score = new Score
   // this.bonus = 5
 }
 

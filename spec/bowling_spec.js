@@ -4,11 +4,15 @@ describe("Bowling start of the game functionalities", function(){
 
   beforeEach(function(){
     bowling = new Bowling();
-    score = new Score();
+    // score = new Score();
   });
 
   it("starts on frame number 1", function(){
     expect(bowling.framenr).toEqual(1);
+  });
+
+  it("the total score starts as an empty array", function(){
+    expect(bowling.score).toEqual([ ]);
   });
 
   it("starts on roll number 1", function(){

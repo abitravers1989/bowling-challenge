@@ -4,6 +4,7 @@ describe("Throwing a bowling ball", function(){
 
   beforeEach(function(){
        bowling = new Bowling();
+      //  score = new Score();
    });
 
 
