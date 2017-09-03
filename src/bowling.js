@@ -13,7 +13,7 @@ var Bowling = function(){
    return Math.floor(Math.random() * 10) + 1
  };
 
- Bowling.prototype.roll1 = function(randomnumber){
+ Bowling.prototype.roll1 = function(){
    this.pinsnr -= randomnumber()
    this.currentscore += randomnumber()
  };
