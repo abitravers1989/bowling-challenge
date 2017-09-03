@@ -12,23 +12,23 @@ var Bowling = function(){
    return Math.floor(Math.random() * 10) + 1
  };
 
- var randomnumber2 = function() {
-   return Math.floor(Math.random() * 10) + 1
- };
 
  Bowling.prototype.roll1 = function(){
    rollnr = randomnumber1()
    this.currentscore += rollnr
-   console.log(this.currentscore)
-   console.log(rollnr)
    this.pinsnr -= rollnr
-   console.log(rollnr)
-   console.log(this.pinsnr)
+ };
+
+ var randomnumber2 = function() {
+   maxnr = this.pinsnr
+   return Math.floor(Math.random() * maxnr) + 1
  };
 
  Bowling.prototype.roll2 = function(){
-   this.pinsnr -= randomnumber1()
-   this.currentscore += randomnumber1()
+   rollnr2 = randomnumber2()
+   console.log(rollnr2)
+   this.pinsnr -= rollnr2
+   this.currentscore += rollnr2
  };
 
   Bowling.prototype.gameframe = function(){
@@ -45,3 +45,4 @@ var Bowling = function(){
 bowl = new Bowling
 bowl.roll1();
 bowl.gameframe();
+bowl.roll2();
