@@ -21,12 +21,17 @@ var Bowling = function(){
 
  var randomnumber2 = function() {
    maxnr = this.pinsnr
-   return Math.floor(Math.random() * maxnr) + 1
+   return Math.floor(Math.random() * 9) + 1
  };
 
  Bowling.prototype.roll2 = function(){
    rollnr2 = randomnumber2()
    console.log(rollnr2)
+   if (rollnr2 > this.pinsnr) {
+     rollnr2 = this.pinsnr
+   } else {
+     rollnr2 = rollnr2
+   }
    this.pinsnr -= rollnr2
    this.currentscore += rollnr2
  };
