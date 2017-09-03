@@ -13,4 +13,8 @@ describe("Frame/ game 1", function(){
       bowling.gameframe
       expect(bowling.roll2).toHaveBeenCalled();
     });
+
+    it("roll 2 contains the correct number of pins", function(){
+
+    });
  });

@@ -10,12 +10,10 @@ var Bowling = function(){
 }
 
  var randomnumber = function() {
-   return 8
-  //  BOWLNUM = [1,2,3,4,5,6,7,8,9,10]
-  //  BOWLNUM._sample
+   return Math.floor(Math.random() * 10) + 1
  };
 
- Bowling.prototype.roll1 = function(){
+ Bowling.prototype.roll1 = function(randomnumber){
    this.pinsnr -= randomnumber()
    this.currentscore += randomnumber()
  };
