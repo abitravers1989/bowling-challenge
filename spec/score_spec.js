@@ -16,8 +16,15 @@ describe("Score", function(){
    });
 
    it("calculates the score of a frame when neither a spare or strike happen", function(){
-     result = score.calculatingframe(1, false, 3, false)
+     score.calculatingframe(1, false, 3, false)
      expect(score.totalscore).toContain(4)
+   });
+
+   it("calculates the score when there is a strike", function(){
+     var bonus = 10
+    //  assign an arbitary bonus of 10 for strike at the second roll number
+     score.calculatingframe(10, true, bonus, false)
+     expect(score.totalscore).toContain(20)
    });
 
   //  it("if the number of pins knocked down in roll 1 is 10 then strike is changed to true", function(){
