@@ -14,7 +14,14 @@ describe("Frame/ game 1", function(){
       expect(bowling.roll2).toHaveBeenCalled();
     });
 
-    it("roll 2 contains the correct number of pins", function(){
+    it("The current score cannot be higher than 10", function(){
+      bowling.roll1();
+      bowling.gameframe();
+      bowling.roll2();
+      expect(bowling.currentscore).toBeLessThan(11)
+    })
 
-    });
+    // it("roll 2 contains the correct number of pins", function(){
+    //
+    // });
  });
