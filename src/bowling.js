@@ -4,10 +4,10 @@ var Bowling = function(){
   this.framenr = 1
   this.rollnr = 1
   this.currentscore = 0
-  this.totalscore = []
   this.pinsnr = 10
   this.strike = false
-  this.bonus = 5
+  this.score = new Score
+  // this.bonus = 5
 }
 
  var randomnumber = function() {
