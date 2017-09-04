@@ -20,18 +20,17 @@ describe("Score", function(){
      expect(score.totalscore).toContain(4)
    });
 
-   it("calculates the score when there is a strike", function(){
-     var framenr = 1
-     score.calculatingframe(10, true, 0, false);
-     score.hasstrike(framenr, true);
-     expect(score.totalscore).toContain(10)
-     expect(score.strike).toEqual({1: true})
-   });
-
    it("records if there is a strike in a hash with the frame number ONLY WHEN FRAME 1 ATM", function(){
      score.hasstrike(1, true)
      expect(score.strike).toEqual({1: true})
    });
+
+   it("calculates the score when there is a strike", function(){
+     score.framenr = 1
+     score.calculatingframe(10, true, 0, false);
+     expect(score.totalscore).toContain(10)
+     expect(score.strike).toEqual({1: true})
+    });
 
   //  it("if the number of pins knocked down in roll 1 is 10 then strike is changed to true", function(){
   //   //  create a spy object for 10 to go into bowl.roll1
