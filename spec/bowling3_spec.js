@@ -10,7 +10,6 @@ describe("Frame/ game 1", function(){
 // NEED A SPY HERE
   it("goes to roll 2 if roll 1 does not equal a strike",function(){
     bowling.strike = false;
-    bowling.roll1();
     bowling.gameframe();
     expect(bowling.roll2()).toHaveBeenCalled();
   });

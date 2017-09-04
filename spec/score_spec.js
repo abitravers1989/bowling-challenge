@@ -11,26 +11,28 @@ describe("Score", function(){
      expect(score.totalscore).toEqual([]);
    });
 
-   it("starts on frame number 1", function(){
-     expect(score.framenr).toEqual(1);
-   });
-
    it("calculates the score of a frame when neither a spare or strike happen", function(){
      score.calculatingframe(1, false, 3, false)
      expect(score.totalscore).toContain(4)
    });
 
    it("records if there is a strike in a hash with the frame number ONLY WHEN FRAME 1 ATM", function(){
-     score.hasstrike(1, true)
-     expect(score.strike).toEqual({1: true})
+     score.hasstrike(true)
+     expect(score.strike).toContain(true)
    });
 
    it("calculates the score when there is a strike", function(){
-     score.framenr = 1
      score.calculatingframe(10, true, 0, false);
      expect(score.totalscore).toContain(10)
-     expect(score.strike).toEqual({1: true})
+     expect(score.strike).toContain(true)
     });
+
+    it("keeps the stikes as an array and the total score of a hash as an array", function(){
+      score.calculatingframe(10, true, 0, false);
+      score.calculatingframe(7, false, 1, false);
+      expect(score.totalscore).toContain(10, 8)
+      expect(score.strike).toContain(true, false)
+     });
 
   //  it("if the number of pins knocked down in roll 1 is 10 then strike is changed to true", function(){
   //   //  create a spy object for 10 to go into bowl.roll1

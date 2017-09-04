@@ -3,10 +3,9 @@ var Score = function(){
   this.totalscore = []
   this.strike = [];
   this.spare = {};
-  this.frame = 1
+  // this.frame = 1
 };
 
-// maybe don't need frame number? just a pattern of true and falses then compare this to score array
 Score.prototype.hasstrike = function(bowlingstrike){
    this.strike.push(bowlingstrike)
       // frame = 1
@@ -19,21 +18,18 @@ Score.prototype.hasstrike = function(bowlingstrike){
     // this.frame = {nextframe}
   };
 
-scor = new Score
-scor.hasstrike(true)
-scor.hasstrike(false)
-scor.strike
-
-
   Score.prototype.calculatingframe = function(roll1, strike, roll2, spare){
     score1 = roll1 + roll2
-    console.log('running calculating with true')
     this.totalscore.push(score1)
     if (strike === true) {
-      Score.prototype.hasstrike(true);
+      console.log('1')
+      this.hasstrike(true);
+      console.log('2')
     } else {
-      Score.prototype.hasstrike(false);
+      this.hasstrike(false);
+      console.log('3')
     }
+    console.log('4')
   };
 
 
