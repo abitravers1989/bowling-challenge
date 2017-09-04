@@ -34,6 +34,14 @@ describe("Score", function(){
       expect(score.strike).toContain(true, false)
      });
 
+
+     it("calculates the score when there is a spare", function(){
+       score.calculatingframe(2, false, 8, true);
+       expect(score.totalscore).toContain(10)
+       expect(score.strike).toContain(false)
+       expect(score.spare).toContain(true)
+      });
+
   //  it("if the number of pins knocked down in roll 1 is 10 then strike is changed to true", function(){
   //   //  create a spy object for 10 to go into bowl.roll1
   //    expect(score.strike).toEqual(true);
