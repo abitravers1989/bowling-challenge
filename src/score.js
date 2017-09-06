@@ -16,19 +16,20 @@ var Score = function(){
   Score.prototype.calculatingframe = function(roll1, strike, roll2, spare){
     score1 = roll1 + roll2
     this.totalscore.push(score1)
-    if (strike === true) {
-      this.hasstrike(true);
-    } else if (strike === false){
-      this.hasstrike(false);
-    } else if (spare === true) {
+     if (spare === true && strike === false) {
       this.hasspare(true);
+      this.hasstrike(false);
+    } else if (strike === true && spare === false) {
+     this.hasstrike(true);
+     this.hasspare(false);
     } else {
-      this.hasspare(false);
+     this.hasstrike(false);
+     this.hasspare(false);
     }
-
-  };
+ };
 
 
 scor = new Score
 scor.calculatingframe(10, true, 0, false);
-core.calculatingframe(2, false, 8, true);
+scor.calculatingframe(2, false, 8, true);
+scor.calculatingframe(2, false, 3, false);
