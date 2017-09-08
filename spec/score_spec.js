@@ -1,4 +1,4 @@
-describe("Score", function(){
+describe("Score is stored correctly globally throughout game", function(){
 
   var score
 

@@ -27,9 +27,3 @@ var Score = function(){
      this.hasspare(false);
     }
  };
-
-
-scor = new Score
-scor.calculatingframe(10, true, 0, false);
-scor.calculatingframe(2, false, 8, true);
-scor.calculatingframe(2, false, 3, false);
