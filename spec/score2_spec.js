@@ -8,7 +8,7 @@ describe("Score is calculated correctly including bonuses", function(){
   });
 
   it("The bonus amount is calculated from the stike and total score array",function(){
-    score.calculatingframe(10, true, 0, false);
+    score.calculatingframe(10, false, 0, false);
     score.calculatingframe(2, false, 8, true);
     score.calculatingframe(2, false, 3, false);
     score.calculatingframe(10, true, 0, false);
@@ -18,11 +18,13 @@ describe("Score is calculated correctly including bonuses", function(){
     score.calculatingframe(2, false, 8, true);
     score.calculatingframe(2, false, 3, false);
     score.calculatingframe(2, false, 8, true);
-    expect(score.strike).toContain(true, false, false, true, false, false, true, false, false, false)
+    expect(score.strike).toContain(false, false, false, true, false, false, true, false, false, false)
     expect(score.spare).toContain(false, true, false, false, true, false, false, true, false, true);
-
-    // expect(score.stikebonus).toEqual(false, true, false, false, true, false, false, true, false, true);
+    expect(score.stikebonusarray).toEqual(5, 5);
+    expect(score.stikebonustotal).toEqual(10);
+    score.totalscore.push(score.stikebonustotal);
+    expect(score.totalscorecalc).toEqual(10);
   });
 });
-// 
+//
 // expect(score.spare).toContain(false, true, false, false, true, false, false, true, false, true);

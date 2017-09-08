@@ -27,3 +27,33 @@ var Score = function(){
      this.hasspare(false);
     }
  };
+
+  Score.prototype.calcscore = function (){
+    strikearray = [];
+    this.strike.forEach(function(item, index) {
+      if (item === true){
+        strikearray.push(index)
+      };
+    });
+    console.log(strikearray)
+  };
+
+
+
+ score = new Score
+  score.calculatingframe(10, false, 0, false);
+  score.calculatingframe(2, false, 8, true);
+  score.calculatingframe(2, false, 3, false);
+  score.calculatingframe(10, true, 0, false);
+  score.calculatingframe(2, false, 8, true);
+  score.calculatingframe(2, false, 3, false);
+  score.calculatingframe(10, true, 0, false);
+  score.calculatingframe(2, false, 8, true);
+  score.calculatingframe(2, false, 3, false);
+  score.calculatingframe(2, false, 8, true);
+score.calcscore()
+//
+//   fruits[5] = 'mango';
+// console.log(fruits[5]); // 'mango'
+// console.log(Object.keys(fruits));  // ['0', '1', '2', '5']
+// console.log(fruits.length); // 6
