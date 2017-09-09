@@ -5,7 +5,7 @@ var Bowling = function(){
 // both currentscore and pinsnr needed??
   this.strike = false
   this.spare = false
-  this.score = new Score
+  // this.score = new Score
 }
 
  var randomnumber1 = function() {
@@ -50,5 +50,4 @@ var Bowling = function(){
     };
 
 bowl = new Bowling
-// this executes both roll 1 and roll2
 bowl.gameframe();

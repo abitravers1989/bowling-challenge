@@ -19,7 +19,6 @@
               <div class="navbar-header">
                   <a class="navbar-brand" href="#">
                       <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
-                      Bowling Challange
                   </a>
               </div>
 
@@ -33,7 +32,18 @@
 
     <main>
         <div class="jumbotron">
+         <h1 id="welcome">Online Bowling Challenge</h1>
+         <h4>   Hopefully your drunk </h4>
+        </div>
 
+        <div class="jumbotron">
+        <h3 id="currentscore"> Current Score <%= this.calculatingtotalscorewithbonus(); %> </h3>
+         <h4> Roll away your hopes and dreams... </h4>
+           <p>
+
+          <form id= "frame1">
+            <input type=button value="First Roll" id="roll1"/>
+            <input type=button value="Second Roll" id="roll2"/><br />
         </div>
     </main>
 
@@ -41,5 +51,9 @@
       <p class="text-center text-muted">© Bowling Legends 2017 by Abi Travers</p>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src= "src/interface.js"></script>
+  <script src= "src/bowling.js"></script>
+  <script src= "src/score.js"></script>
 </body>
 </html>
