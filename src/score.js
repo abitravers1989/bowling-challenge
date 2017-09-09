@@ -37,19 +37,18 @@ var Score = function(){
     });
     strikebonuscal = [];
     totscore = this.totalscore
-    console.log(hands)
     strikearray.forEach(function (item, index){
       indexnrofstrike = item + 1
       accessingnextscorevalue = totscore[indexnrofstrike]
-       console.log(accessingnextscorevalue)
+      //  console.log(accessingnextscorevalue)
       strikebonuscal.push(accessingnextscorevalue)
-       console.log(strikebonuscal)
-      //  console.log(this.totalscore[cats])
-    });
+      //  console.log(strikebonuscal)
+     });
+     console.log(strikebonuscal)
+     strikebonuscal.forEach(function (item, index) {
+     console.log(item)
+     });
   };
-
-  // strikebonuscal.push(hand)
-  // console.log(strikebonuscal)
 
  score = new Score
   score.calculatingframe(10, false, 0, false);
