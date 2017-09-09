@@ -36,14 +36,14 @@ var Score = function(){
       };
     });
     strikebonuscal = [];
-    hands = this.totalscore
+    totscore = this.totalscore
     console.log(hands)
     strikearray.forEach(function (item, index){
-       console.log(item)
-       console.log(index)
-       cats = item + 1
-       console.log(cats)
-       console.log(hands)
+      indexnrofstrike = item + 1
+      accessingnextscorevalue = totscore[indexnrofstrike]
+       console.log(accessingnextscorevalue)
+      strikebonuscal.push(accessingnextscorevalue)
+       console.log(strikebonuscal)
       //  console.log(this.totalscore[cats])
     });
   };
