@@ -4,6 +4,7 @@ var Score = function(){
   this.spare = [];
   this.strikearray = [];
   this.positionofbonusonscorearray = [];
+  this.bonusscorearray = [];
   // this.frame = 1
 };
 
@@ -48,22 +49,42 @@ var Score = function(){
      positionofbonusonscorearray = [];
      strikearray.forEach(function (item){
        positionofbonusonscorearray.push(item +1)
-       this.positionofbonusonscorearray = positionofbonusonscorearray
-      //  console.log(this.positionofbonusonscorearray)
      });
+
+     this.positionofbonusonscorearray = positionofbonusonscorearray
+
    };
+
 
   Score.prototype.calcbonusscore3 = function () {
      this.calcbonusscore2();
-     totalscore = this.totalscore
+     console.log(this.totalscore)
+     console.log(Score.prototype.totalscore)
+     totalscorearray = this.totalscore
+     console.log(totalscorearray)
      positionofbonusonscorearray = this.positionofbonusonscorearray
-     bonusarray = [];
-     totalscore.forEach(function (item, index){
-        if (positionofbonusonscorearray === index)
-          bonusarray.push(item)
+     console.log(this.positionofbonusonscorearray)
+     console.log(positionofbonusonscorearray)
+     bonusscorearray = [];
+     positionofbonusonscorearray.forEach(function (item, index){
+       bonusscorearray.push(totalscorearray[item])
      });
-     console.log(bonusarray)
+     this.bonusscorearray = bonusscorearray
+     console.log(this.bonusscorearray)
   };
+
+  score = new Score
+   score.calculatingframe(10, false, 0, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingframe(2, false, 3, false);
+   score.calculatingframe(10, true, 0, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingframe(2, false, 3, false);
+   score.calculatingframe(10, true, 0, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingframe(2, false, 3, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calcbonusscore3();
 
 
   // Score.prototype.calcstrikebonus = function (){
@@ -104,7 +125,7 @@ var Score = function(){
   score.calculatingframe(2, false, 8, true);
   score.calculatingframe(2, false, 3, false);
   score.calculatingframe(2, false, 8, true);
-  score.calcbonusscore3()
+  score.calcbonusscore2()
 //
 //   fruits[5] = 'mango';
 // console.log(fruits[5]); // 'mango'
