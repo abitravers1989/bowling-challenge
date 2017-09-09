@@ -2,6 +2,7 @@ var Score = function(){
   this.totalscore = []
   this.strike = [];
   this.spare = [];
+  this.strikearray = [];
   // this.frame = 1
 };
 
@@ -29,14 +30,20 @@ var Score = function(){
  };
 
   Score.prototype.calcscore = function (){
-    strikearray = [];
+    strikearray = this.strikearray
     this.strike.forEach(function(item, index) {
       if (item === true){
         strikearray.push(index)
-      };
-    });
+     )};
+  };
+
+  Score.prototype.calcstrikebonus = function (){
+    this.calcscore();
+    console.log(this.calcscore())
     strikebonuscal = [];
     totscore = this.totalscore
+    strikearray = this.strikearray
+
     strikearray.forEach(function (item, index){
       indexnrofstrike = item + 1
       accessingnextscorevalue = totscore[indexnrofstrike]
@@ -44,11 +51,18 @@ var Score = function(){
       strikebonuscal.push(accessingnextscorevalue)
       //  console.log(strikebonuscal)
      });
+
      console.log(strikebonuscal)
-     strikebonuscal.forEach(function (item, index) {
+     strikebonuscal.forEach(function (item) {
      console.log(item)
+      //  strikebonuscal.getSum(item, 0)
      });
   };
+
+  Score.prototype.getSum = function (total, num){
+    return total + num
+  };
+
 
  score = new Score
   score.calculatingframe(10, false, 0, false);
@@ -61,7 +75,7 @@ var Score = function(){
   score.calculatingframe(2, false, 8, true);
   score.calculatingframe(2, false, 3, false);
   score.calculatingframe(2, false, 8, true);
-score.calcscore()
+score.calcstrikebonus()
 //
 //   fruits[5] = 'mango';
 // console.log(fruits[5]); // 'mango'
