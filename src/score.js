@@ -53,6 +53,17 @@ var Score = function(){
      });
    };
 
+  Score.prototype.calcbonusscore3 = function () {
+     this.calcbonusscore2();
+     totalscore = this.totalscore
+     positionofbonusonscorearray = this.positionofbonusonscorearray
+     bonusarray = [];
+     totalscore.forEach(function (item, index){
+        if (positionofbonusonscorearray === index)
+          bonusarray.push(item)
+     });
+     console.log(bonusarray)
+  };
 
 
   // Score.prototype.calcstrikebonus = function (){
@@ -93,7 +104,7 @@ var Score = function(){
   score.calculatingframe(2, false, 8, true);
   score.calculatingframe(2, false, 3, false);
   score.calculatingframe(2, false, 8, true);
-  score.calcbonusscore2()
+  score.calcbonusscore3()
 //
 //   fruits[5] = 'mango';
 // console.log(fruits[5]); // 'mango'
