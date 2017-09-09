@@ -51,5 +51,5 @@ var Bowling = function(){
       }
     };
 
-bowl = new Bowling
-bowl.gameframe();
+// bowl = new Bowling
+// bowl.gameframe();

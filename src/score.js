@@ -99,15 +99,15 @@ var Score = function(){
     return scorefinal
   }
 
-  score = new Score
-   score.calculatingframe(10, false, 0, false);
-   score.calculatingframe(2, false, 8, true);
-   score.calculatingframe(2, false, 3, false);
-   score.calculatingframe(10, true, 0, false);
-   score.calculatingframe(2, false, 8, true);
-   score.calculatingframe(2, false, 3, false);
-   score.calculatingframe(10, true, 0, false);
-   score.calculatingframe(2, false, 8, true);
-   score.calculatingframe(2, false, 3, false);
-   score.calculatingframe(2, false, 8, true);
-   score.calculatingtotalscorewithbonus();
+  // score = new Score
+  //  score.calculatingframe(10, false, 0, false);
+  //  score.calculatingframe(2, false, 8, true);
+  //  score.calculatingframe(2, false, 3, false);
+  //  score.calculatingframe(10, true, 0, false);
+  //  score.calculatingframe(2, false, 8, true);
+  //  score.calculatingframe(2, false, 3, false);
+  //  score.calculatingframe(10, true, 0, false);
+  //  score.calculatingframe(2, false, 8, true);
+  //  score.calculatingframe(2, false, 3, false);
+  //  score.calculatingframe(2, false, 8, true);
+  //  score.calculatingtotalscorewithbonus();
