@@ -20,10 +20,7 @@ describe("Score is calculated correctly including bonuses", function(){
     score.calculatingframe(2, false, 8, true);
     expect(score.strike).toContain(false, false, false, true, false, false, true, false, false, false)
     expect(score.spare).toContain(false, true, false, false, true, false, false, true, false, true);
-    expect(score.stikebonusarray).toEqual(5, 5);
-    expect(score.stikebonustotal).toEqual(10);
-    score.totalscore.push(score.stikebonustotal);
-    expect(score.totalscorecalc).toEqual(10);
+    expect(score.calculatingtotalscorewithbonus()).toEqual(105);
   });
 });
 //

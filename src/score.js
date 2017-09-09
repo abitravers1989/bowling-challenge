@@ -5,6 +5,7 @@ var Score = function(){
   this.strikearray = [];
   this.positionofbonusonscorearray = [];
   this.bonusscorearray = [];
+  this.totalbonusscore = [];
   // this.frame = 1
 };
 
@@ -58,20 +59,43 @@ var Score = function(){
 
   Score.prototype.calcbonusscore3 = function () {
      this.calcbonusscore2();
-     console.log(this.totalscore)
-     console.log(Score.prototype.totalscore)
      totalscorearray = this.totalscore
-     console.log(totalscorearray)
      positionofbonusonscorearray = this.positionofbonusonscorearray
-     console.log(this.positionofbonusonscorearray)
-     console.log(positionofbonusonscorearray)
      bonusscorearray = [];
      positionofbonusonscorearray.forEach(function (item, index){
        bonusscorearray.push(totalscorearray[item])
      });
      this.bonusscorearray = bonusscorearray
-     console.log(this.bonusscorearray)
   };
+
+  Score.prototype.calcbonusscore4 = function () {
+    this.calcbonusscore3();
+    bonusscorearray = this.bonusscorearray
+    // console.log(bonusscorearray)
+    count = 0
+    bonusscorearray.forEach(function (item, index){
+      count += item
+    });
+    this.totalbonusscore = count
+    // return this.totalbonusscore
+  }
+
+  Score.prototype.calculatingtotalscore = function () {
+    this.calcbonusscore4();
+    totalscore = this.totalscore
+    count = 0
+    totalscore.forEach(function (item, index){
+      count += item
+    });
+    this.totalscore = count
+    return this.totalscore
+  };
+
+  Score.prototype.calculatingtotalscorewithbonus = function () {
+    this.calculatingtotalscore();
+    scorefinal = (this.totalscore) + (this.totalbonusscore)
+    return scorefinal
+  }
 
   score = new Score
    score.calculatingframe(10, false, 0, false);
@@ -84,7 +108,7 @@ var Score = function(){
    score.calculatingframe(2, false, 8, true);
    score.calculatingframe(2, false, 3, false);
    score.calculatingframe(2, false, 8, true);
-   score.calcbonusscore3();
+   score.calculatingtotalscorewithbonus();
 
 
   // Score.prototype.calcstrikebonus = function (){
