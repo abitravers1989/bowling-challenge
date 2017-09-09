@@ -3,6 +3,7 @@ var Score = function(){
   this.strike = [];
   this.spare = [];
   this.strikearray = [];
+  this.positionofbonusonscorearray = [];
   // this.frame = 1
 };
 
@@ -29,39 +30,56 @@ var Score = function(){
     }
  };
 
-  Score.prototype.calcscore = function (){
+  Score.prototype.calcbonusscore1 = function (){
     strikearray = this.strikearray
     this.strike.forEach(function(item, index) {
       if (item === true){
         strikearray.push(index)
-     )};
+      }
+    });
+    this.strikearray = strikearray
   };
 
-  Score.prototype.calcstrikebonus = function (){
-    this.calcscore();
-    console.log(this.calcscore())
-    strikebonuscal = [];
-    totscore = this.totalscore
-    strikearray = this.strikearray
-
-    strikearray.forEach(function (item, index){
-      indexnrofstrike = item + 1
-      accessingnextscorevalue = totscore[indexnrofstrike]
-      //  console.log(accessingnextscorevalue)
-      strikebonuscal.push(accessingnextscorevalue)
-      //  console.log(strikebonuscal)
+   Score.prototype.calcbonusscore2 = function () {
+     this.calcbonusscore1();
+    //  console.log(this.strikearray)
+     strikearray = this.strikearray
+     totalscorearray = this.totalscore
+     positionofbonusonscorearray = [];
+     strikearray.forEach(function (item){
+       positionofbonusonscorearray.push(item +1)
+       this.positionofbonusonscorearray = positionofbonusonscorearray
+      //  console.log(this.positionofbonusonscorearray)
      });
+   };
 
-     console.log(strikebonuscal)
-     strikebonuscal.forEach(function (item) {
-     console.log(item)
-      //  strikebonuscal.getSum(item, 0)
-     });
-  };
 
-  Score.prototype.getSum = function (total, num){
-    return total + num
-  };
+
+  // Score.prototype.calcstrikebonus = function (){
+  //   this.calcscore();
+  //   console.log(this.calcscore())
+  //   strikebonuscal = [];
+  //   totscore = this.totalscore
+  //   strikearray = this.strikearray
+  //
+  //   strikearray.forEach(function (item, index){
+  //     indexnrofstrike = item + 1
+  //     accessingnextscorevalue = totscore[indexnrofstrike]
+  //     //  console.log(accessingnextscorevalue)
+  //     strikebonuscal.push(accessingnextscorevalue)
+  //     //  console.log(strikebonuscal)
+  //    });
+  //
+  //    console.log(strikebonuscal)
+  //    strikebonuscal.forEach(function (item) {
+  //    console.log(item)
+  //     //  strikebonuscal.getSum(item, 0)
+  //    });
+  // };
+  //
+  // Score.prototype.getSum = function (total, num){
+  //   return total + num
+  // };
 
 
  score = new Score
@@ -75,7 +93,7 @@ var Score = function(){
   score.calculatingframe(2, false, 8, true);
   score.calculatingframe(2, false, 3, false);
   score.calculatingframe(2, false, 8, true);
-score.calcstrikebonus()
+  score.calcbonusscore2()
 //
 //   fruits[5] = 'mango';
 // console.log(fruits[5]); // 'mango'
