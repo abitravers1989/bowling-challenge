@@ -35,10 +35,21 @@ var Score = function(){
         strikearray.push(index)
       };
     });
-    console.log(strikearray)
+    strikebonuscal = [];
+    hands = this.totalscore
+    console.log(hands)
+    strikearray.forEach(function (item, index){
+       console.log(item)
+       console.log(index)
+       cats = item + 1
+       console.log(cats)
+       console.log(hands)
+      //  console.log(this.totalscore[cats])
+    });
   };
 
-
+  // strikebonuscal.push(hand)
+  // console.log(strikebonuscal)
 
  score = new Score
   score.calculatingframe(10, false, 0, false);
