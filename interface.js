@@ -30,14 +30,17 @@ $('#ball1s').on( 'click', function(){
 });
 
 $('#ball1a').on( 'click', function(){
+  if (framenr === 1 && score1.score === 0){
   score1.calculatingframe(10, true, 0, false);
   score1.calculatingtotalscorewithbonus();
   strikemessage();
-  // updatescore();
+  updatescore();
+} else {
+  window.alert("That is just greedy ...You have already rolled your first ball of this frame... You can't have all the fun. Please roll Ball 2 instead!")
+}
+
  });
 
-
- if not ball1a or score1.strike contains true
 
 $('#ball1s').on( 'click', function(){
    if (strike1 === flase){
@@ -51,28 +54,7 @@ $('#ball1s').on( 'click', function(){
 });
 
 
-
-
-
-//
-// // function updatecoreafterroll(){
-//   $('#currentscore').attr('class', score1.calculatingtotalscorewithbonus())
-// };
-//
-// $('#frame1').on('click', function() {
-//   $('#frame1').slideToggle(200);
-//   score.calculatingframe(10, false, 0, false);
-//   updatescore();
-// });
-//
-// $('#currentscore').text('Your current score is' + score1.updatescore + " Ratpigeons")
-
 // // search by attribute
 // $('button[id="frame1"]')
 
-
-
-// function frame1(){
-// $('#roll1')
-// }
 });
