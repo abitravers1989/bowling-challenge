@@ -1,13 +1,20 @@
+
 var Score = function(){
   this.totalscore = []
   this.strike = [];
   this.spare = [];
   this.strikearray = [];
+  this.sparearray = [];
   this.positionofbonusonscorearray = [];
   this.bonusscorearray = [];
   this.totalbonusscore = [];
   this.score = 0;
-  this.framenr = 1
+  this.framenr = 1;
+  this.spareearray = [];
+  this.positionofbonusonscorearrayspare = [];
+  this.bonusscorearray2spare = [];
+  this.totalbonusscore2 = [];
+
 };
 
  Score.prototype.hasstrike = function(bowlingstrike){
@@ -43,6 +50,21 @@ var Score = function(){
     this.strikearray = strikearray
   };
 
+
+
+    Score.prototype.calcbonusscore1spare = function (){
+      sparearray = this.sparearray
+      this.spare.forEach(function(item, index) {
+        if (item === true){
+          sparearray.push(index)
+        }
+      });
+      this.sparearray = sparearray
+    };
+
+
+
+
    Score.prototype.calcbonusscore2 = function () {
      this.calcbonusscore1();
     //  console.log(this.strikearray)
@@ -58,6 +80,25 @@ var Score = function(){
    };
 
 
+
+
+   Score.prototype.calcbonusscore2spare = function () {
+     this.calcbonusscore1spare();
+     sparearray = this.sparearray
+     totalscorearray = this.totalscore
+     positionofbonusonscorearrayspare = [];
+      sparearray.forEach(function (item){
+       positionofbonusonscorearrayspare.push(item +1)
+     });
+
+     this.positionofbonusonscorearrayspare = positionofbonusonscorearrayspare
+
+   };
+
+
+
+
+
   Score.prototype.calcbonusscore3 = function () {
      this.calcbonusscore2();
      totalscorearray = this.totalscore
@@ -69,6 +110,22 @@ var Score = function(){
      this.bonusscorearray = bonusscorearray
   };
 
+
+
+  Score.prototype.calcbonusscore3spare = function () {
+     this.calcbonusscore2spare();
+     totalscorearray = this.totalscore
+     positionofbonusonscorearrayspare = this.positionofbonusonscorearrayspare
+     bonusscorearray2spare = [];
+     positionofbonusonscorearray.forEach(function (item, index){
+       positionofbonusonscorearrayspare.push(totalscorearray[item])
+     });
+     this.bonusscorearray2spare = bonusscorearray2spare
+  };
+
+
+
+
   Score.prototype.calcbonusscore4 = function () {
     this.calcbonusscore3();
     bonusscorearray = this.bonusscorearray
@@ -79,10 +136,30 @@ var Score = function(){
     });
     this.totalbonusscore = count
     // return this.totalbonusscore
-  }
+  };
+
+
+
+
+  Score.prototype.calcbonusscore4spare = function () {
+    this.calcbonusscore3spare();
+    bonusscorearray2spare = this.bonusscorearray2spare
+    // console.log(bonusscorearray)
+    count = 0
+    bonusscorearray2spare.forEach(function (item, index){
+      count += item
+    });
+    this.totalbonusscore2 = count
+    // return this.totalbonusscore
+  };
+
+
+
+
 
   Score.prototype.calculatingtotalscore = function () {
     this.calcbonusscore4();
+    this.calcbonusscore4spare();
     totalscore = this.totalscore
     count = 0
     totalscore.forEach(function (item, index){
@@ -92,9 +169,10 @@ var Score = function(){
     return this.totalscore
   };
 
+
   Score.prototype.calculatingtotalscorewithbonus = function () {
     this.calculatingtotalscore();
-    scorefinal = (this.totalscore) + (this.totalbonusscore)
+    scorefinal = (this.totalscore) + (this.totalbonusscore) + (this.totalbonusscore2spare)
     this.score = scorefinal
     this.framenr += 1
     return this.score
@@ -102,13 +180,23 @@ var Score = function(){
 
   score = new Score
    score.calculatingframe(10, false, 0, false);
+
    score.calculatingframe(2, false, 8, true);
+
    score.calculatingframe(2, false, 3, false);
+
    score.calculatingframe(10, true, 0, false);
+
    score.calculatingframe(2, false, 8, true);
+
    score.calculatingframe(2, false, 3, false);
+
    score.calculatingframe(10, true, 0, false);
+
    score.calculatingframe(2, false, 8, true);
+
    score.calculatingframe(2, false, 3, false);
+
    score.calculatingframe(2, false, 8, true);
+
    score.calculatingtotalscorewithbonus();
