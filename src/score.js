@@ -4,11 +4,16 @@ var Score = function(){
   this.strike = [];
   this.spare = [];
   this.strikearray = [];
+  this.sparearray = [];
   this.positionofbonusonscorearray = [];
   this.bonusscorearray = [];
   this.totalbonusscore = [];
   this.score = 0;
   this.framenr = 1;
+  this.spareearray = [];
+  this.positionofbonusonscorearrayspare = [];
+  this.bonusscorearray2spare = [];
+  this.totalbonusscore2spare = [];
 };
 
  Score.prototype.hasstrike = function(bowlingstrike){
@@ -44,6 +49,21 @@ var Score = function(){
     this.strikearray = strikearray
   };
 
+
+
+    Score.prototype.calcbonusscore1spare = function (){
+      sparearray = this.sparearray
+      this.spare.forEach(function(item, index) {
+        if (item === true){
+          sparearray.push(index)
+        }
+      });
+      this.sparearray = sparearray
+    };
+
+
+
+
    Score.prototype.calcbonusscore2 = function () {
      this.calcbonusscore1();
     //  console.log(this.strikearray)
@@ -59,6 +79,25 @@ var Score = function(){
    };
 
 
+
+
+   Score.prototype.calcbonusscore2spare = function () {
+     this.calcbonusscore1spare();
+     sparearray = this.sparearray
+     totalscorearray = this.totalscore
+     positionofbonusonscorearrayspare = [];
+      sparearray.forEach(function (item){
+       positionofbonusonscorearrayspare.push(item +1)
+     });
+
+     this.positionofbonusonscorearrayspare = positionofbonusonscorearrayspare
+
+   };
+
+
+
+
+
   Score.prototype.calcbonusscore3 = function () {
      this.calcbonusscore2();
      totalscorearray = this.totalscore
@@ -70,6 +109,22 @@ var Score = function(){
      this.bonusscorearray = bonusscorearray
   };
 
+
+
+  Score.prototype.calcbonusscore3spare = function () {
+     this.calcbonusscore2spare();
+     totalscorearray = this.totalscore
+     positionofbonusonscorearrayspare = this.positionofbonusonscorearrayspare
+     bonusscorearray2spare = [];
+     positionofbonusonscorearray.forEach(function (item, index){
+       positionofbonusonscorearrayspare.push(totalscorearray[item])
+     });
+     this.bonusscorearray2spare = bonusscorearray2spare
+  };
+
+
+
+
   Score.prototype.calcbonusscore4 = function () {
     this.calcbonusscore3();
     bonusscorearray = this.bonusscorearray
@@ -80,7 +135,30 @@ var Score = function(){
     });
     this.totalbonusscore = count
     // return this.totalbonusscore
-  }
+  };
+
+
+
+
+  Score.prototype.calcbonusscore4spare = function () {
+    this.calcbonusscore3spare();
+    bonusscorearray2spare = this.bonusscorearray2spare
+    // console.log(bonusscorearray)
+    count = 0
+    bonusscorearray2spare.forEach(function (item, index){
+      count += item
+    });
+    this.totalbonusscore2spare = count
+    // return this.totalbonusscore
+  };
+
+
+
+
+
+
+
+
 
   Score.prototype.calculatingtotalscore = function () {
     this.calcbonusscore4();

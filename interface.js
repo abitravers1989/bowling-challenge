@@ -23,32 +23,39 @@ function updateframenr(){
   score1.framenr += 1
 };
 
+//
+// $('#frame1option1').on( 'click', function(){
+//   score1.calculatingframe(2, false, 3, false);
+//   score1.calculatingtotalscorewithbonus();
+//   updatescore();
+//   updateframenr();
+// });
+//
+// $('#frame1option2').on( 'click', function(){
+//   score1.calculatingframe(10, true, 3, false);
+//   score1.calculatingtotalscorewithbonus();
+//   strikemessage();
+//   updateframenr();
+// });
+//
+// $('#frame2option1').on( 'click', function(){
+//   score1.calculatingframe(2, false, 3, false);
+//   score1.calculatingtotalscorewithbonus();
+//   updatescore();
+//   updateframenr();
+// });
 
-$('#frame1option1').on( 'click', function(){
-  score1.calculatingframe(2, false, 3, false);
-  score1.calculatingtotalscorewithbonus();
-  updatescore();
-  updateframenr();
-});
 
-$('#frame1option2').on( 'click', function(){
-  score1.calculatingframe(10, true, 3, false);
-  score1.calculatingtotalscorewithbonus();
-  strikemessage();
-  updateframenr();
-});
 
-$('#frame2option1').on( 'click', function(){
-if (score1.strike1 === true) {
-  score1.calculatingframe(2, false, 3, false);
-  score1.calculatingtotalscorewithbonus();
-  updatescore();
-  updateframenr();
-} else {
-  score1.calculatingframe(7, false, 3, false);
-  score1.calculatingtotalscorewithbonus();
-  updatescore();
-  updateframenr();
-}
-});
+// if (strike1 === true) {
+//   score1.calculatingframe(2, false, 3, false);
+//   score1.calculatingtotalscorewithbonus();
+//   updatescore();
+//   updateframenr();
+// } else {
+//   score1.calculatingframe(7, false, 3, false);
+//   score1.calculatingtotalscorewithbonus();
+//   updatescore();
+//   updateframenr();
+// }
 });
