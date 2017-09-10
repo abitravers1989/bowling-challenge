@@ -9,7 +9,8 @@ $('#framenr').text("You are on frame number " + score1.framenr + " of 10!")
 
 
 function strikemessage(){
-  $('#currentscore').text("BOOOOOM You got a strike! Please wait till the next round to see how many extra Ratpigeons you recieved");
+  window.alert(" BOOOOOM YESSSSSSSSIR !!!!!   You got a strike!  LEG END ")
+  $('#currentscore').text("Please wait till the next round to see how many extra Ratpigeons you earnt");
   strike1 = true
 };
 
@@ -18,43 +19,36 @@ function updatescore(){
 };
 
 function updateframenr(){
-  score1.framenr += 1
   $('#framenr').text("You are on frame number " + score1.framenr + " of 10!");
+  score1.framenr += 1
 };
 
 
-$('#ball1s').on( 'click', function(){
+$('#frame1option1').on( 'click', function(){
   score1.calculatingframe(2, false, 3, false);
   score1.calculatingtotalscorewithbonus();
   updatescore();
+  updateframenr();
 });
 
-$('#ball1a').on( 'click', function(){
-  if (framenr === 1 && score1.score === 0){
-  score1.calculatingframe(10, true, 0, false);
+$('#frame1option2').on( 'click', function(){
+  score1.calculatingframe(10, true, 3, false);
   score1.calculatingtotalscorewithbonus();
   strikemessage();
-  updatescore();
-} else {
-  window.alert("That is just greedy ...You have already rolled your first ball of this frame... You can't have all the fun. Please roll Ball 2 instead!")
-}
-
- });
-
-
-$('#ball1s').on( 'click', function(){
-   if (strike1 === flase){
-     score1.calculatingframe(2, false, 3, false);
-     score1.calculatingtotalscorewithbonus();
-     updatescore();
-     updateframenr();
-   } else {
-       window.alert("First ball was a strike please move onto frame 2")
-   };
+  updateframenr();
 });
 
-
-// // search by attribute
-// $('button[id="frame1"]')
-
+$('#frame2option1').on( 'click', function(){
+if (score1.strike1 === true) {
+  score1.calculatingframe(2, false, 3, false);
+  score1.calculatingtotalscorewithbonus();
+  updatescore();
+  updateframenr();
+} else {
+  score1.calculatingframe(7, false, 3, false);
+  score1.calculatingtotalscorewithbonus();
+  updatescore();
+  updateframenr();
+}
+});
 });

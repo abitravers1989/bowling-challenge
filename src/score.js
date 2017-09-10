@@ -8,7 +8,7 @@ var Score = function(){
   this.bonusscorearray = [];
   this.totalbonusscore = [];
   this.score = 0;
-  this.framenr = 1
+  this.framenr = 1;
 };
 
  Score.prototype.hasstrike = function(bowlingstrike){
