@@ -1,4 +1,3 @@
-'use strict';
 
 var Score = function(){
   this.totalscore = []
@@ -8,6 +7,7 @@ var Score = function(){
   this.positionofbonusonscorearray = [];
   this.bonusscorearray = [];
   this.totalbonusscore = [];
+  this.score = 0;
   // this.frame = 1
 };
 
@@ -96,18 +96,19 @@ var Score = function(){
   Score.prototype.calculatingtotalscorewithbonus = function () {
     this.calculatingtotalscore();
     scorefinal = (this.totalscore) + (this.totalbonusscore)
-    return scorefinal
-  }
+    this.score = scorefinal
+    return this.score
+  };
 
-  // score = new Score
-  //  score.calculatingframe(10, false, 0, false);
-  //  score.calculatingframe(2, false, 8, true);
-  //  score.calculatingframe(2, false, 3, false);
-  //  score.calculatingframe(10, true, 0, false);
-  //  score.calculatingframe(2, false, 8, true);
-  //  score.calculatingframe(2, false, 3, false);
-  //  score.calculatingframe(10, true, 0, false);
-  //  score.calculatingframe(2, false, 8, true);
-  //  score.calculatingframe(2, false, 3, false);
-  //  score.calculatingframe(2, false, 8, true);
-  //  score.calculatingtotalscorewithbonus();
+  score = new Score
+   score.calculatingframe(10, false, 0, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingframe(2, false, 3, false);
+   score.calculatingframe(10, true, 0, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingframe(2, false, 3, false);
+   score.calculatingframe(10, true, 0, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingframe(2, false, 3, false);
+   score.calculatingframe(2, false, 8, true);
+   score.calculatingtotalscorewithbonus();
