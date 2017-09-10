@@ -8,8 +8,14 @@ function updatescore(){
   $('#currentscore').text("Score is now: " + score1.score + " Ratpigeons");
 };
 
-$('#frame1').on( 'click', function(){
+$('#ball1s').on( 'click', function(){
   score1.calculatingframe(2, false, 3, false);
+  score1.calculatingtotalscorewithbonus();
+  updatescore();
+});
+
+$('#ball1a').on( 'click', function(){
+  score1.calculatingframe(10, true, 0, false);
   score1.calculatingtotalscorewithbonus();
   updatescore();
 });
