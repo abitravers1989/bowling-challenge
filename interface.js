@@ -5,12 +5,20 @@ $(document).ready(function(){
 $('#currentscore').text("Your current score is " + score1.score + " Ratpigeons");
 
 function updatescore(){
-  score1.calculatingframe(0, false, 0, false);
-  calculatingtotalscorewithbonus();
+  $('#currentscore').text("Score is now: " + score1.score + " Ratpigeons");
 };
-//
-// $('#currentscore').text("Your current score is " + score1.updatescore + " Ratpigeons");
-//
+
+$('#frame1').on( 'click', function(){
+  score1.calculatingframe(2, false, 3, false);
+  score1.calculatingtotalscorewithbonus();
+  updatescore();
+});
+
+$('#framenr').text("You are on frame number " + score1.framenr + " of 10!")
+
+
+
+
 //
 // // function updatecoreafterroll(){
 //   $('#currentscore').attr('class', score1.calculatingtotalscorewithbonus())
